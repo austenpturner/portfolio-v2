@@ -1,0 +1,26 @@
+@use "../sass/util/" as *;
+@use "../sass/globals/" as *;
+
+.footer {
+  position: relative;
+  .upBtn {
+    background-color: var(--tennis-ball);
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    bottom: rem(10);
+    right: 0;
+    width: rem(40);
+    height: rem(40);
+    transition: background-color 200ms ease-in-out;
+    z-index: 10000;
+    &:hover {
+      background-color: var(--tennis-shadow);
+      cursor: pointer;
+    }
+    &__icon {
+      color: var(--dark-bg);
+      font-size: rem(20);
+    }
+  }
+}

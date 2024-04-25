@@ -4,10 +4,10 @@
 .intro {
   @include flex(column, space-around, flex-start, 0);
   &__heading {
-    margin: 4rem 0 0;
+    margin: rem(20) 0 0;
   }
   &__subheading {
-    margin: 0.5rem 0;
+    margin: rem(8) 0;
   }
   &__description {
     width: 70%;
@@ -15,11 +15,11 @@
   .resumeBtn {
     background-color: var(--tennis-ball);
     border: none;
-    border-radius: 10px;
+    border-radius: rem(10);
     color: var(--dark-bg);
     font-size: 1rem;
-    margin: 0.8rem 0;
-    padding: 0.8rem 1.5rem;
+    margin: rem(16) 0;
+    padding: rem(12) rem(20);
     transition: all 200ms ease-in-out;
     &:hover {
       background-color: var(--tennis-shadow);
