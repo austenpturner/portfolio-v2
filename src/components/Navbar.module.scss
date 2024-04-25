@@ -1,0 +1,14 @@
+@use "../sass/util/" as *;
+@use "../sass/globals/" as *;
+
+.topnav {
+  @include flex(row, flex-end, center, 2rem);
+  list-style: none;
+  &__item {
+    margin: 0;
+    padding: 0;
+  }
+  &__link {
+    color: var(--light-text);
+  }
+}

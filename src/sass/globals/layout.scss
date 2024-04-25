@@ -1,0 +1,7 @@
+@use "../util/" as *;
+
+body {
+  margin: 0 auto rem(46);
+  max-width: rem(1110);
+  padding: 0 rem(25);
+}

@@ -1,0 +1,29 @@
+@use "../sass/util/" as *;
+@use "../sass/globals/" as *;
+
+.intro {
+  @include flex(column, space-around, flex-start, 0);
+  &__heading {
+    margin: 4rem 0 0;
+  }
+  &__subheading {
+    margin: 0.5rem 0;
+  }
+  &__description {
+    width: 70%;
+  }
+  .resumeBtn {
+    background-color: var(--tennis-ball);
+    border: none;
+    border-radius: 10px;
+    color: var(--dark-bg);
+    font-size: 1rem;
+    margin: 0.8rem 0;
+    padding: 0.8rem 1.5rem;
+    transition: all 200ms ease-in-out;
+    &:hover {
+      background-color: var(--tennis-shadow);
+      cursor: pointer;
+    }
+  }
+}
