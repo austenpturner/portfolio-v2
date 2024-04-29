@@ -9,11 +9,14 @@
     padding: 0;
   }
   &__link {
-    border-bottom: 1.5px solid var(--dark-bg);
+    border: 1.5px solid var(--dark-bg);
+    border-radius: 50%;
     color: var(--light-text);
-    transition: border-bottom 250ms ease-in-out;
+    padding: rem(6) rem(12);
+    transition: border-color 250ms ease-in-out;
     &:hover {
-      border-bottom: 1.5px solid var(--tennis-ball);
+      // border-bottom: 1.5px solid var(--tennis-ball);
+      border-color: var(--tennis-ball);
     }
   }
 }

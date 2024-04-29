@@ -1,0 +1,40 @@
+@use "../sass/util/" as *;
+@use "../sass/globals/" as *;
+
+.about {
+  @include flex(column, flex-start, flex-start, 0);
+  @include container;
+  @include section;
+  &__header {
+    margin: rem(50) 0 0;
+  }
+  &__content {
+    @include breakpoint(medium) {
+      width: 70%;
+    }
+  }
+  &__subheading {
+    margin: rem(24) 0 rem(12);
+  }
+  &__skills {
+    @include flex(row, flex-start, center, 0);
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  &__skill {
+    @include flex(column, center, center, 0);
+    padding: rem(16);
+    width: rem(100);
+    p {
+      font-size: rem(14);
+      margin: 0;
+    }
+  }
+  &__icon {
+    color: var(--tennis-ball);
+    font-size: rem(60);
+    margin-bottom: rem(8);
+  }
+}

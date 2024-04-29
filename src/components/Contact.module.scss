@@ -1,7 +1,7 @@
 @use "../sass/util/" as *;
 @use "../sass/globals/" as *;
 
-.header {
+.contact {
+  @include flex(column, space-around, flex-start, 0);
   @include container;
-  padding: rem(12);
 }
