@@ -11,6 +11,7 @@ import {
   faSass,
   faWordpress,
 } from "@fortawesome/free-brands-svg-icons";
+import Button from "./Button";
 
 const skills = [
   {
@@ -71,18 +72,22 @@ const About = () => {
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci,
           quis! Cupiditate, eius!
         </p>
-        <h3 className={styles.about__subheading}>Skills:</h3>
-        <ul className={styles.about__skills}>
+        <h3 className={styles.about__skills}>Skills:</h3>
+        <ul className={styles.about__skillsList}>
           {skills.map((skill) => {
             const { name, iconEl } = skill;
             return (
               <li className={styles.about__skill}>
                 {iconEl}
-                {name}
+                <p>{name}</p>
               </li>
             );
           })}
         </ul>
+        <h4 className={styles.about__resume}>
+          That's not all, folks! Please see my resume for more details.
+        </h4>
+        <Button text={`download resume`} />
       </div>
     </section>
   );

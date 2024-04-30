@@ -2,28 +2,50 @@
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: var(--font-IBM-serif);
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: rem(40);
   line-height: 1.1;
+  @include breakpoint(medium) {
+    font-size: rem(50);
+    line-height: 1.1;
+  }
 }
 
 h2 {
-  font-size: rem(32);
+  font-size: rem(28);
   font-weight: 400;
+  @include breakpoint(medium) {
+    font-size: rem(32);
+  }
 }
 
 h3 {
-  font-size: rem(24);
-  font-weight: 300;
-  letter-spacing: 1.1px;
+  font-size: rem(22);
+  font-weight: 400;
+  @include breakpoint(medium) {
+    font-size: rem(24);
+  }
+}
+
+h4 {
+  font-size: rem(16);
+  font-weight: 400;
+  @include breakpoint(medium) {
+    font-size: rem(18);
+  }
 }
 
 p {
+  font-size: rem(14);
   font-weight: 300;
+  @include breakpoint(medium) {
+    font-size: rem(16);
+  }
 }
 
 a,

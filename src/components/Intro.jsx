@@ -1,5 +1,6 @@
 import styles from "./Intro.module.scss";
 import photo from "../assets/handsTypingCode.svg";
+import Button from "./Button";
 
 const Intro = () => {
   return (
@@ -14,7 +15,8 @@ const Intro = () => {
             repellat a id consequatur maxime. Cupiditate illum ab sunt quia
             tenetur, nobis exercitationem.
           </p>
-          <button className={styles.resumeBtn}>download resume</button>
+          {/* <button className={styles.resumeBtn}>let's connect</button> */}
+          <Button text={`let's connect`} />
         </div>
         <img className={styles.intro__image} src={photo} alt="coding image" />
       </div>
