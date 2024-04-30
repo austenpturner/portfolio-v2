@@ -3,14 +3,13 @@
 
 .about {
   @include flex(column, flex-start, flex-start, 0);
-  @include container;
-  @include section;
+  background-color: var(--dark-bg-secondary);
   &__header {
-    margin: rem(50) 0 0;
+    margin: 0;
   }
-  &__content {
+  &__para {
     @include breakpoint(medium) {
-      width: 70%;
+      width: 80%;
     }
   }
   &__subheading {

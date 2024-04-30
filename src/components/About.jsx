@@ -58,26 +58,32 @@ const skills = [
 const About = () => {
   return (
     <section className={styles.about}>
-      <h2 className={styles.about__header}>About me</h2>
-      <p className={styles.about__content}>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates
-        cupiditate autem fuga perspiciatis similique modi natus iure? Earum sunt
-        nulla, voluptate voluptatem ipsa rerum temporibus sapiente similique non
-        enim, qui fugit cupiditate iste quae laborum autem eaque asperiores
-        veniam delectus.
-      </p>
-      <h3 className={styles.about__subheading}>Skills:</h3>
-      <ul className={styles.about__skills}>
-        {skills.map((skill) => {
-          const { name, iconEl } = skill;
-          return (
-            <li className={styles.about__skill}>
-              {iconEl}
-              {name}
-            </li>
-          );
-        })}
-      </ul>
+      <div className={styles.container}>
+        <h2 className={styles.about__header}>About me</h2>
+        <p className={styles.about__para}>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates
+          cupiditate autem fuga perspiciatis similique modi natus iure? Earum
+          sunt nulla, voluptate voluptatem ipsa rerum temporibus sapiente
+          similique non enim, qui fugit cupiditate iste quae laborum autem eaque
+          asperiores veniam delectus.
+        </p>
+        <p className={styles.about__para}>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Adipisci,
+          quis! Cupiditate, eius!
+        </p>
+        <h3 className={styles.about__subheading}>Skills:</h3>
+        <ul className={styles.about__skills}>
+          {skills.map((skill) => {
+            const { name, iconEl } = skill;
+            return (
+              <li className={styles.about__skill}>
+                {iconEl}
+                {name}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </section>
   );
 };

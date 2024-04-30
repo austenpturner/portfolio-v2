@@ -2,6 +2,10 @@
 @use "../sass/globals/" as *;
 
 .portfolio {
-  @include flex(column, space-around, flex-start, 0);
-  @include container;
+  &__container {
+    @include flex(column, flex-start, flex-start, 0);
+  }
+  &__header {
+    margin: 0;
+  }
 }

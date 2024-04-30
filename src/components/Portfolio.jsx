@@ -3,7 +3,9 @@ import styles from "./Portfolio.module.scss";
 const Portfolio = () => {
   return (
     <section className={styles.portfolio}>
-      <h2>Projects</h2>
+      <div className={`${styles.container} ${styles.portfolio__container}`}>
+        <h2 className={styles.portfolio__header}>Projects</h2>
+      </div>
     </section>
   );
 };

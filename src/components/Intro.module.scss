@@ -2,17 +2,35 @@
 @use "../sass/globals/" as *;
 
 .intro {
-  @include flex(column, space-around, flex-start, 0);
-  @include container;
+  &__container {
+    @include flex(column, space-between, center, 0);
+    @include breakpoint(large) {
+      margin-top: 0;
+      flex-direction: row;
+    }
+  }
+  &__content {
+    @include flex(column, center, flex-start, 0);
+    @include breakpoint(large) {
+      height: 100%;
+      width: 50%;
+    }
+  }
   &__heading {
-    margin: rem(20) 0 0;
+    margin: 0;
   }
   &__subheading {
     margin: rem(8) 0;
   }
   &__description {
     @include breakpoint(medium) {
-      width: 70%;
+      width: 80%;
+    }
+  }
+  &__image {
+    max-width: 80%;
+    @include breakpoint(large) {
+      max-width: 50%;
     }
   }
   .resumeBtn {
