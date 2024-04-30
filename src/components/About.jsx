@@ -59,7 +59,7 @@ const skills = [
 
 const About = () => {
   return (
-    <section className={styles.about}>
+    <section id="about" className={styles.about}>
       <div className={styles.container}>
         <h2 className={styles.about__header}>About me</h2>
         <p className={styles.about__para}>

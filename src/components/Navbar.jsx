@@ -5,17 +5,17 @@ const Navbar = () => {
     <nav className={`${styles.container} ${styles.topnav}`}>
       <ul className={styles.topnav__list}>
         <li className={styles.topnav__item}>
-          <a href="/#about" className={styles.topnav__link}>
+          <a href="#about" className={styles.topnav__link}>
             About
           </a>
         </li>
         <li className={styles.topnav__item}>
-          <a href="/#portfolio" className={styles.topnav__link}>
+          <a href="#portfolio" className={styles.topnav__link}>
             Portfolio
           </a>
         </li>
         <li className={styles.topnav__item}>
-          <a href="/#contact" className={styles.topnav__link}>
+          <a href="#contact" className={styles.topnav__link}>
             Contact
           </a>
         </li>
