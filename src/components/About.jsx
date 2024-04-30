@@ -12,6 +12,7 @@ import {
   faWordpress,
 } from "@fortawesome/free-brands-svg-icons";
 import Button from "./Button";
+import Resume from "../assets/resume.pdf";
 
 const skills = [
   {
@@ -87,7 +88,12 @@ const About = () => {
         <h4 className={styles.about__resume}>
           That's not all, folks! Please see my resume for more details.
         </h4>
-        <Button text={`download resume`} />
+        <Button
+          text={`download resume`}
+          link={Resume}
+          target={`_blank`}
+          download={`AustenTurnerResume.pdf`}
+        />
       </div>
     </section>
   );
