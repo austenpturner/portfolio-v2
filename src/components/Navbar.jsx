@@ -2,8 +2,8 @@ import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
   return (
-    <nav>
-      <ul className={styles.topnav}>
+    <nav className={`${styles.container} ${styles.topnav}`}>
+      <ul className={styles.topnav__list}>
         <li className={styles.topnav__item}>
           <a href="/#about" className={styles.topnav__link}>
             About

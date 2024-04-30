@@ -2,5 +2,27 @@
 @use "../sass/globals/" as *;
 
 .header {
-  padding: rem(12);
+  background-color: var(--dark-bg);
+  box-shadow: rgba(0, 0, 0, 0.3) 0 0.5rem 1rem;
+  height: rem(60);
+  position: sticky;
+  top: rem(-2);
+  width: 100%;
+  z-index: 1;
+}
+
+@supports (animation-timeline: scroll()) {
+  header {
+    animation: scroll-shadow linear both;
+    animation-timeline: scroll();
+    // animation-range: 0ex 5ex;
+  }
+  @keyframes scroll-shadow {
+    from {
+      box-shadow: none;
+    }
+    to {
+      box-shadow: rgba(0, 0, 0, 0.3) 0 0.5rem 1rem;
+    }
+  }
 }
