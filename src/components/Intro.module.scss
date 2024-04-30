@@ -2,8 +2,13 @@
 @use "../sass/globals/" as *;
 
 .intro {
-  // padding-top: rem(140);
-  // padding-bottom: rem(20);
+  @include breakpoint(medium) {
+    padding-top: rem(120);
+    padding-bottom: rem(0);
+  }
+  @include breakpoint(large) {
+    padding: rem(80) rem(50) rem(100);
+  }
   &__container {
     @include flex(column, space-between, center, 0);
     @include breakpoint(large) {
@@ -14,7 +19,6 @@
   &__content {
     @include flex(column, center, flex-start, 0);
     @include breakpoint(large) {
-      height: 100%;
       width: 50%;
     }
   }
@@ -26,13 +30,17 @@
   }
   &__description {
     @include breakpoint(medium) {
-      width: 80%;
+      width: 90%;
     }
   }
   &__image {
+    margin-top: rem(-30);
     max-width: 80%;
+    @include breakpoint(medium) {
+      max-width: rem(500);
+    }
     @include breakpoint(large) {
-      max-width: 50%;
+      margin-top: 0;
     }
   }
 }
