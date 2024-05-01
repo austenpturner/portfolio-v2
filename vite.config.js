@@ -9,5 +9,5 @@ export default defineConfig({
     outDir: "../dist",
     emptyOutDir: true,
   },
-  base: "/portfolio-v2/",
+  base: "/portfolio/",
 });
