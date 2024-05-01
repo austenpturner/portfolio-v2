@@ -8,14 +8,13 @@
   position: sticky;
   top: rem(-2);
   width: 100%;
-  z-index: 1;
+  z-index: 999;
 }
 
 @supports (animation-timeline: scroll()) {
   header {
     animation: scroll-shadow linear both;
     animation-timeline: scroll();
-    // animation-range: 0ex 5ex;
   }
   @keyframes scroll-shadow {
     from {

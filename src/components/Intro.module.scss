@@ -44,4 +44,60 @@
       margin-top: 0;
     }
   }
+  &__modal,
+  &__overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  &__overlay {
+    background: rgba(36, 36, 36, 0.9);
+  }
+  &__modalContent {
+    @include flex(row, flex-start, flex-start, 0);
+    background: var(--bone-white);
+    border-radius: 5px;
+    color: var(--dark-bg);
+    padding: 0 rem(16) rem(16) rem(58);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: rem(400);
+    z-index: 1001;
+  }
+  &__modalList {
+    @include flex(row, center, space-evenly, 1rem);
+    flex-wrap: wrap;
+    margin-top: rem(50);
+    padding: rem(16);
+    list-style: none;
+    li {
+      width: 33.3%;
+      a {
+        @include flex(column, center, center, 0);
+        border-radius: 5px;
+        color: var(--dark-bg);
+        cursor: pointer;
+        padding: rem(6) rem(16);
+        transition: all 200ms ease-in-out;
+        width: 100%;
+        &:hover {
+          background-color: var(--tennis-ball);
+        }
+        svg {
+          font-size: rem(36);
+        }
+        p {
+          font-size: rem(14);
+          margin: rem(5) 0;
+        }
+      }
+    }
+  }
 }
