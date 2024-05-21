@@ -1,7 +1,7 @@
 {
-  "name": "portfolio-v2",
+  "name": "portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,10 +11,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/austenpturner/portfolio-v2.git"
+    "url": "git+https://github.com/austenpturner/portfolio.git"
   },
   "author": "Austen P. Turner",
-  "homepage": "https://github.com/austenpturner/portfolio-v2#readme",
+  "homepage": "https://github.com/austenpturner/portfolio#readme",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-brands-svg-icons": "^6.5.2",

@@ -11,8 +11,8 @@ import {
   faSass,
   faWordpress,
 } from "@fortawesome/free-brands-svg-icons";
-import Button from "./Button";
-import Resume from "../assets/resume.pdf";
+import Resume from "../../assets/resume.pdf";
+import Button from "../Button/Button";
 
 const skills = [
   {

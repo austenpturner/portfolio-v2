@@ -1,5 +1,5 @@
-@use "../sass/util/" as *;
-@use "../sass/globals/" as *;
+@use "../../sass/util/" as *;
+@use "../../sass/globals/" as *;
 
 .about {
   @include flex(column, flex-start, flex-start, 0);

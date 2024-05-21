@@ -1,15 +1,15 @@
 import styles from "./Intro.module.scss";
-import photo from "../assets/handsTypingCode.svg";
-import Button from "./Button";
+import photo from "../../assets/handsTypingCode.svg";
+
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCodepen,
   faGithub,
   faInstagram,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import Button from "../Button/Button";
 
 const Intro = () => {
   const [modal, setModal] = useState(false);

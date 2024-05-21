@@ -1,5 +1,5 @@
-@use "../sass/util/" as *;
-@use "../sass/globals/" as *;
+@use "../../sass/util/" as *;
+@use "../../sass/globals/" as *;
 
 .intro {
   padding-bottom: 0;
@@ -68,7 +68,7 @@
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: rem(400);
+    width: rem(360);
     z-index: 1001;
   }
   &__modalList {
