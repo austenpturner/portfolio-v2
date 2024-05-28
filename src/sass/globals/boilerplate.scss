@@ -1,8 +1,9 @@
 @use "../util/" as *;
 
 html {
-  font-size: 100%;
   box-sizing: border-box;
+  font-size: 100%;
+  overflow: auto;
 }
 
 *,
@@ -17,6 +18,7 @@ body {
   font-family: var(--font-IBM-sans);
   margin: 0;
   padding: 0;
+  overflow: hidden;
   &.active-modal {
     overflow-y: hidden;
   }

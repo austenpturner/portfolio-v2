@@ -4,24 +4,104 @@
 .topnav {
   @include flex(row, flex-end, center, 0);
   height: 100%;
+  position: relative;
+  &__button {
+    background: transparent;
+    border: none;
+    padding: rem(4) rem(12.5) 0 0;
+    cursor: pointer;
+    justify-self: end;
+    @include breakpoint(large) {
+      display: none;
+    }
+    .hamburger {
+      fill: var(--light-text);
+      .line {
+        transform-origin: center;
+        transition: 400ms ease-in-out;
+      }
+    }
+    &.open {
+      .hamburger > .line {
+        &__top,
+        &__bottom {
+          y: 45;
+        }
+        &__top {
+          rotate: 45deg;
+        }
+        &__bottom {
+          rotate: -45deg;
+        }
+        &__middle {
+          opacity: 0;
+        }
+      }
+    }
+  }
   &__list {
-    @include flex(row, space-evenly, center, 0);
+    @include flex(column, space-evenly, center, 0);
+    background-color: var(--light-text);
+    height: 100vh;
     list-style: none;
-    padding: 0 rem(16) 0 0;
+    margin: 0 auto;
+    padding: 0 0 rem(300) 0;
+    opacity: 0;
+    transition: all 500ms ease-in-out;
+    width: 40%;
+    position: absolute;
+    right: -100%;
+    top: rem(60);
+    @include breakpoint(large) {
+      @include flex(row, flex-end, center, 0);
+      background-color: transparent;
+      height: 100%;
+      padding: 0;
+      width: 50%;
+      right: 0;
+      top: 0;
+    }
+    &.open {
+      opacity: 1;
+      right: 0;
+    }
+    @include breakpoint(large) {
+      margin-right: rem(30);
+      opacity: 1;
+    }
+    @include breakpoint(xlarge) {
+      margin-right: 0;
+    }
   }
   &__item {
     margin: 0;
     padding: 0;
+    text-align: center;
+    width: rem(120);
+    @include breakpoint(large) {
+      text-align: end;
+    }
   }
   &__link {
-    border-bottom: 1.5px solid var(--dark-bg);
-    color: var(--light-text);
+    border-bottom: rem(1.8) solid transparent;
+    color: var(--dark-bg);
     font-size: rem(14);
-    margin: rem(6) rem(16);
-    transition: border-color 250ms ease-in-out;
+    margin: 0;
+    transition: all 200ms ease-in-out;
+    @include breakpoint(medium) {
+      font-size: rem(16);
+    }
+    @include breakpoint(large) {
+      color: var(--light-text);
+      font-size: rem(14);
+      transition: border 200ms ease-in-out;
+    }
     &:hover {
-      // border-bottom: 1.5px solid var(--tennis-ball);
-      border-color: var(--tennis-ball);
+      border-color: var(--dark-bg);
+      font-weight: 700;
+      @include breakpoint(large) {
+        border-color: var(--tennis-ball);
+      }
     }
   }
 }
