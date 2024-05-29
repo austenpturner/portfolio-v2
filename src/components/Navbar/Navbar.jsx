@@ -3,20 +3,38 @@ import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [ariaExpanded, setAriaExpanded] = useState(false);
+  const [ariaLabel, setAriaLabel] = useState("open");
+  const [navTransition, setNavTransition] = useState("none");
 
   const openNav = () => {
     if (!open) {
       setOpen(true);
+      setAriaExpanded(true);
+      setAriaLabel("close");
+      setNavTransition("translate 500ms ease-in-out");
+
       return;
     }
     setOpen(false);
+    setAriaExpanded(false);
+    setAriaLabel("open");
+    setTimeout(() => {
+      setNavTransition("none");
+    }, 500);
   };
 
   return (
     <nav className={`${styles.container} ${styles.topnav}`}>
+      <span id="nav-label" hidden>
+        Navigation
+      </span>
       <button
         className={`${styles.topnav__button} ${open ? styles.open : ""}`}
         onClick={openNav}
+        aria-labelledby="nav-label"
+        aria-expanded={ariaExpanded}
+        aria-label={ariaLabel}
       >
         <svg className={styles.hamburger} viewBox="0 0 100 100" width="35">
           <rect
@@ -45,7 +63,12 @@ const Navbar = () => {
           ></rect>
         </svg>
       </button>
-      <ul className={`${styles.topnav__list} ${open ? styles.open : ""}`}>
+      <ul
+        className={`${styles.topnav__list}  ${open ? `${styles.open}` : ""}`}
+        aria-expanded={ariaExpanded}
+        role="dialog"
+        style={{ transition: `${navTransition}` }}
+      >
         <li className={styles.topnav__item}>
           <a href="#about" className={styles.topnav__link}>
             About
