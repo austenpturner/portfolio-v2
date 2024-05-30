@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
@@ -6,6 +6,27 @@ const Navbar = () => {
   const [ariaExpanded, setAriaExpanded] = useState(false);
   const [ariaLabel, setAriaLabel] = useState("open");
   const [navTransition, setNavTransition] = useState("none");
+  const [tabIndex, setTabIndex] = useState("-1");
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+      if (windowWidth > 1023) {
+        setTabIndex("0");
+        setOpen(false);
+        setNavTransition("none");
+      } else if (windowWidth < 1024 && open) {
+        setTabIndex("0");
+      } else {
+        setTabIndex("-1");
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
 
   const openNav = () => {
     if (!open) {
@@ -13,12 +34,13 @@ const Navbar = () => {
       setAriaExpanded(true);
       setAriaLabel("close");
       setNavTransition("translate 500ms ease-in-out");
-
+      setTabIndex("0");
       return;
     }
     setOpen(false);
     setAriaExpanded(false);
     setAriaLabel("open");
+    setTabIndex("-1");
     setTimeout(() => {
       setNavTransition("none");
     }, 500);
@@ -68,19 +90,28 @@ const Navbar = () => {
         aria-expanded={ariaExpanded}
         role="dialog"
         style={{ transition: `${navTransition}` }}
+        onClick={openNav}
       >
         <li className={styles.topnav__item}>
-          <a href="#about" className={styles.topnav__link}>
+          <a href="#about" className={styles.topnav__link} tabIndex={tabIndex}>
             About
           </a>
         </li>
         <li className={styles.topnav__item}>
-          <a href="#portfolio" className={styles.topnav__link}>
+          <a
+            href="#portfolio"
+            className={styles.topnav__link}
+            tabIndex={tabIndex}
+          >
             Portfolio
           </a>
         </li>
         <li className={styles.topnav__item}>
-          <a href="#contact" className={styles.topnav__link}>
+          <a
+            href="#contact"
+            className={styles.topnav__link}
+            tabIndex={tabIndex}
+          >
             Contact
           </a>
         </li>
@@ -89,6 +120,7 @@ const Navbar = () => {
             href="https://resume.creddle.io/resume/23m33e9lngm"
             target="_blank"
             className={styles.topnav__link}
+            tabIndex={tabIndex}
           >
             Resume
           </a>
