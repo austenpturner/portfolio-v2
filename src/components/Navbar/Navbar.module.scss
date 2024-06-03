@@ -42,7 +42,7 @@
   &__list {
     @include flex(column, space-evenly, center, 0);
     background-color: var(--light-text);
-    height: 100vh;
+    height: calc(100vh - 60px);
     list-style: none;
     margin: 0 auto;
     padding: 0 0 rem(300) 0;

@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import styles from "./Navbar.module.scss";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const [open, setOpen] = useState(false);
   const [ariaExpanded, setAriaExpanded] = useState(false);
   const [ariaLabel, setAriaLabel] = useState("open");
   const [navTransition, setNavTransition] = useState("none");
   const [tabIndex, setTabIndex] = useState("-1");
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const { hidden } = props;
 
   useEffect(() => {
     const handleResize = () => {
@@ -35,12 +37,14 @@ const Navbar = () => {
       setAriaLabel("close");
       setNavTransition("translate 500ms ease-in-out");
       setTabIndex("0");
+      hidden(open);
       return;
     }
     setOpen(false);
     setAriaExpanded(false);
     setAriaLabel("open");
     setTabIndex("-1");
+    hidden(open);
     setTimeout(() => {
       setNavTransition("none");
     }, 500);
