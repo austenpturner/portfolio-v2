@@ -10,25 +10,25 @@ import Footer from "./components/Footer/Footer";
 const App = () => {
   const [stopScroll, setStopScroll] = useState(false);
 
-  const handleStopScroll = (open) => {
-    if (!open) {
+  const handleStopScroll = (navOpen, windowSize) => {
+    if (!navOpen && windowSize < 1024) {
       setStopScroll(true);
       document.body.style.overflowY = "hidden";
       document.body.style.height = "100vh";
-      console.log("stop scroll");
+      //   console.log("stop scroll");
     } else {
       setTimeout(() => {
         setStopScroll(false);
       }, 250);
       document.body.style.overflowY = "auto";
       document.body.style.height = "100%";
-      console.log("allow scroll");
+      //   console.log("allow scroll");
     }
   };
 
   return (
     <div className="app">
-      <div className={stopScroll ? "overlay" : ""}></div>
+      {/* <div className={stopScroll ? "overlay" : ""}></div> */}
       <Header hidden={handleStopScroll} />
       <Intro />
       <About />

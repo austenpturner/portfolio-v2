@@ -15,9 +15,11 @@ const Navbar = (props) => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
       if (windowWidth > 1023) {
+        // console.log(windowWidth);
         setTabIndex("0");
         setOpen(false);
         setNavTransition("none");
+        hidden(open, windowWidth);
       } else if (windowWidth < 1024 && open) {
         setTabIndex("0");
       } else {
@@ -37,14 +39,14 @@ const Navbar = (props) => {
       setAriaLabel("close");
       setNavTransition("translate 500ms ease-in-out");
       setTabIndex("0");
-      hidden(open);
+      hidden(open, windowWidth);
       return;
     }
     setOpen(false);
     setAriaExpanded(false);
     setAriaLabel("open");
     setTabIndex("-1");
-    hidden(open);
+    hidden(open, windowWidth);
     setTimeout(() => {
       setNavTransition("none");
     }, 500);
@@ -94,10 +96,14 @@ const Navbar = (props) => {
         aria-expanded={ariaExpanded}
         role="dialog"
         style={{ transition: `${navTransition}` }}
-        onClick={openNav}
       >
         <li className={styles.topnav__item}>
-          <a href="#about" className={styles.topnav__link} tabIndex={tabIndex}>
+          <a
+            href="#about"
+            className={styles.topnav__link}
+            tabIndex={tabIndex}
+            onClick={openNav}
+          >
             About
           </a>
         </li>
@@ -106,6 +112,7 @@ const Navbar = (props) => {
             href="#portfolio"
             className={styles.topnav__link}
             tabIndex={tabIndex}
+            onClick={openNav}
           >
             Portfolio
           </a>
@@ -115,6 +122,7 @@ const Navbar = (props) => {
             href="#contact"
             className={styles.topnav__link}
             tabIndex={tabIndex}
+            onClick={openNav}
           >
             Contact
           </a>
@@ -125,6 +133,7 @@ const Navbar = (props) => {
             target="_blank"
             className={styles.topnav__link}
             tabIndex={tabIndex}
+            onClick={openNav}
           >
             Resume
           </a>

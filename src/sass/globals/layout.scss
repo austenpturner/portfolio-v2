@@ -20,18 +20,18 @@ section {
   position: relative;
 }
 
-.overlay {
-  background-color: rgba(167, 167, 167, 0.803);
-  height: 100vh;
-  opacity: 1;
-  position: absolute;
-  transition: all 250ms ease-in-out;
-  top: 0;
-  right: 0;
-  width: 100vw;
-  z-index: 999;
-}
+// .overlay {
+//   background-color: rgba(167, 167, 167, 0.803);
+//   height: 100vh;
+//   opacity: 1;
+//   position: absolute;
+//   transition: all 250ms ease-in-out;
+//   top: 0;
+//   right: 0;
+//   width: 100vw;
+//   z-index: 999;
+// }
 
-.hidden {
-  overflow: hidden;
-}
+// .hidden {
+//   overflow: hidden;
+// }
