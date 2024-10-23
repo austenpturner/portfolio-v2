@@ -78,7 +78,7 @@ const About = () => {
           {skills.map((skill) => {
             const { name, iconEl } = skill;
             return (
-              <li className={styles.about__skill}>
+              <li className={styles.about__skill} key={name}>
                 {iconEl}
                 <p>{name}</p>
               </li>

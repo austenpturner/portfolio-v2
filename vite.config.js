@@ -4,10 +4,14 @@ import react from "@vitejs/plugin-react";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  root: "src",
+  // root: "src",
   build: {
-    outDir: "../dist",
-    emptyOutDir: true,
+    outDir: "dist",
   },
-  base: "/portfolio/",
+  resolve: {
+    alias: {
+      "@": "/src",
+    },
+  },
+  base: "/portfolio-v2/",
 });

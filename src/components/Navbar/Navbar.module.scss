@@ -4,7 +4,7 @@
 .topnav {
   @include flex(row, flex-end, center, 0);
   height: 100%;
-  position: relative;
+  position: sticky;
   &__button {
     background: transparent;
     border: none;

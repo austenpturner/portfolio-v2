@@ -2,13 +2,13 @@
 @use "../../sass/globals/" as *;
 
 .intro {
+  padding-top: calc(60px + rem(60));
   padding-bottom: 0;
   @include breakpoint(medium) {
-    padding-top: rem(120);
-    padding-bottom: rem(0);
+    padding-top: calc(60px + rem(120));
   }
   @include breakpoint(large) {
-    padding: rem(80) rem(50) rem(100);
+    padding: calc(60px + rem(80)) rem(50) rem(100);
   }
   &__container {
     @include flex(column, space-between, center, 0);

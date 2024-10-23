@@ -14,7 +14,7 @@ const App = () => {
     if (!navOpen && windowSize < 1024) {
       setStopScroll(true);
       document.body.style.overflowY = "hidden";
-      document.body.style.height = "100vh";
+      // document.body.style.height = "100%";
       //   console.log("stop scroll");
     } else {
       setTimeout(() => {
@@ -27,7 +27,7 @@ const App = () => {
   };
 
   return (
-    <div className="app">
+    <div className="app" style={{ position: "relative", overflow: "auto" }}>
       {/* <div className={stopScroll ? "overlay" : ""}></div> */}
       <Header hidden={handleStopScroll} />
       <Intro />
